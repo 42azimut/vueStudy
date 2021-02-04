@@ -32,3 +32,6 @@ ___
 
 01. [Vue js - 초보 입문 강좌 #1. 뷰? ,개발환경 준비](https://www.youtube.com/watch?v=DmgAvJhK3YE) 
 
+02. [Vue js - 초보 입문 강좌 #2 템플릿 문법 [ v-model, v-html, mustache ]](https://www.youtube.com/watch?v=CocO17Pj0Us)
+
+03. []()
