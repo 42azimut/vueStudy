@@ -24,8 +24,8 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 ___
 ### 03.핵심키워드 v-bind
-`<img v-bind:src="imgeSource" alt="random" />`  #imageSource를 v-bind 디렉티브(directive) 즉, 데이터를 바인딩(엮는다)을 사용하여 변수처럼 사용 가능! 
-
+- `<img v-bind:src="imgeSource" alt="random" />`  #imageSource를 v-bind 디렉티브(directive) 즉, 데이터를 바인딩(엮는다)을 사용하여 변수처럼 사용 가능! 
+- `<a :href="naverUrl">naver</a>` #위 v-bind === : 콜론 한개로 같은 역활을 한다!
 
 
 # Code Scalper 님 유튜브 강좌!
