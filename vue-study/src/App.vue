@@ -1,15 +1,30 @@
 <template>
 <div>
-  <h1>Hello {{ animal }} </h1>
-  <h2> {{ animal }} loves a {{ food }}. </h2>
-  <input type="text" v-model="food"/>
-  <div v-html="alertMessage"></div>
-  <div v-html="subscribeHTML"></div>
-  <img v-bind:src="imageSource" alt="random"/>,
-  <a :href="naverURL">{{ food }}</a>
-  <hr>
-  <h2 v-bind:class="{ red: food==='apple', 'not-good': food==='rice' }">원숭이는 {{ food }} 를 좋아 합니다.</h2>
+  <h2>Your age is {{ age }}.</h2>
+  <h3 v-if="age > 18">You are an adult.</h3>
+  <h3 v-else-if="age > 13 && age <= 18">당신은 청소년 입니다.</h3>
+  <h3 v-else>당신은 미성년자 입니다!</h3>
+  <div>
+    <h2 v-if="display">v-if display보입니다!!</h2>
+    <h2 v-show="display">v-show 보입니다!!</h2>
+  </div>
+  <hr/>
+  
+  <div>
+    <template v-for="(animal, index) in animals" :key="index">
+      <h2 v-if="animal !=='monkey'">index: {{ index }} is {{ animal }}</h2>
+    </template>
+  <hr/>
+
+
+    <ul>
+      <li v-for="(user, idx) in users" :key="idx">{{ user.name }}의 직업은 {{ user.job }}
+        <p v-for="item in user.skill" :key="item">{{ item }}</p>
+      </li>
+    </ul>
+  </div>
 </div>
+
 </template>
 
 <script>
@@ -17,13 +32,14 @@ export default {
   name: 'App',
   data() {
     return {
-      animal: "Monkey",
-      food: "apple",
-      alertMessage: "<h2>alert!</h2>",
-      subscribeHTML: `<button onclick="document.querySelector('body').style.background = 'red'">구독하기!!</button>`,
-      imageSource: "https://placeimg.com/100/100/any",
-      naverURL: "https://www.naver.com",
-
+      age : 14,
+      display: true,
+      animals: ["monkey", "rat", "dog", "lion", "monkey"],
+      users: [
+        { name: "'jayden", job: "developer", gender: "male", skill: ["vue", "js", "python"]},
+        { name: "'kay", job: "singer", gender: "female", skill: ["html", "css", "ai"] },
+        { name: "'iu", job: "model", gender: "female", skill: ["c", "pytorch", "tensorflow"]},
+      ]
     }
   }
 }
